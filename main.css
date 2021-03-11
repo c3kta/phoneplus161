@@ -1,25 +1,141 @@
 * {
     color: #333;
 }
+#header-nav {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+#header-nav .logo-brand {
+    display: block;
+    content: " ";
+    width: 50px;
+    height: 50px;
+    background-image: url("./img/logo.png");
+    background-size: 95px;
+    background-position: center;
+}
+
+#header-nav .phone-main-href {
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #333;
+}
+
+#header-nav .bi-telephone-forward-fill {
+    margin-top: -3px;
+}
+
+.or-before-element {
+    position: relative;
+    z-index: 100;
+    color: #333;
+    text-shadow: 2px 0 0 #eee, -2px 0 0 #eee, 0 2px 0 #eee, 0 -2px 0 #eee, 1px 1px #eee, -1px -1px 0 #eee, 1px -1px 0 #eee, -1px 1px 0 #eee;
+}
+.or-element {
+    display: block;
+    position: relative;
+    font-weight: 500;
+    color: #fff;
+    bottom: 12px;
+    z-index: 0;
+}
+.or-element:before {
+    display: block;
+    width: 120px;
+    content: ' ';
+    position: absolute;
+    border: 1px solid #333;
+    top: 50%;
+    right: 110px;
+}
+.or-element:after {
+    display: block;
+    width: 120px;
+    content: ' ';
+    position: absolute;
+    border: 1px solid #333;
+    top: 50%;
+    left: 110px;
+}
+
 #header {
-    min-height: 40px;
-    height: 60px;
+    min-height: 60px;
+    height: 70px;
     position: fixed;
     width: 100%;
-    background-color: #808080;
+    background-color: #fff;
     z-index: 100;
+}
+#header .logo-img {
+    width: 70px;
+    height: 70px;
 }
 
 #title {
     min-height: 100vh;
     padding: 250px;
-    background-color: #dddd;
+    background-image: url("./img/background.jpg");
+    background-blend-mode: color;
+    background-color: #eee;
+}
+#title .h1 {
+    font-size: 2.5em;
+    color: crimson;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+#title .title-logo {
+    position: relative;
+    margin-top: -20px;
+    top: 20px;
+    color: #333;
+}
+#title .adress {
+    font-size: 0.8em;
+    margin-top: -10px;
+    margin-left: 78px;
+    color: #333;
+}
+#title .work-hours {
+    font-size: 0.8em;
+    margin-top: -5px;
+    margin-left: 93px;
+}
+#title .btn-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-variant: small-caps;
+    background-color: crimson;
+    border-color: crimson;
+    font-size: 0.9em;
+}
+#title .title-phone {
+    font-size: 1.4em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: crimson;
+    background: none;
+    /*
+    border: 1px dotted crimson;
+    text-shadow: 2px 0 0 crimson, -2px 0 0 crimson, 0 2px 0 crimson, 0 -2px 0 crimson, 1px 1px crimson, -1px -1px 0 crimson, 1px -1px 0 crimson, -1px 1px 0 crimson;*/
+}
+#title .outher-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:30px;
+    line-height:28px;
+    padding: 0 10px;;
 }
 
 #geo {
     padding-top: 50px;
     padding-bottom: 70px;
-    background-color: #ccc;
+    background-color: #eee;
 }
 #geo .maps {
     margin-top: 40px;
@@ -31,20 +147,28 @@
     margin-top: 40px;
 }
 #geo .geo-text .h4 {
-    margin-top: 40px;
+    margin-top: 20px;
 }
-
 #geo .geo-text .p {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+#geo .h5 {
+    font-weight: 400;
 }
 
 #about {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #eee;
+    background-color: #fff;
 }
-#about .h2 {
-    margin-bottom: 20px;
+#about hr {
+    position: relative;
+    top: 95px;
+    border-width: 0 0 8px;
+    border-style: solid;
+    border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1" width="6" height="2"><circle fill="rgb(255, 0, 0)" cx="1" cy="0.5" r="0.5"/></svg>') 0 0 100% repeat;
+    width: 70%;
 }
 #about .about-icon {
     display: block;
@@ -52,13 +176,13 @@
     width: 120px;
     height: 120px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70%;
-    /*background-color: #fff;*/
+    background-color: #fff;
 }
 #about .about-phone-ico {
     background-image: url("./img/001-mobile-phone.png");
@@ -72,25 +196,33 @@
 #about .about-content {
     text-align: center;
     margin-bottom: 30px;
+    color: #444;
+    font-size: 1em;
+    font-weight: 200;
 }
 #about .about-post {
     text-align: center;
     font-size: 0.6em;
 }
+#about .h5 {
+    /*color: crimson;*/
+}
 
 #price {
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 50px;
-    background-color: #ddd;
+    background-color: #fff;
 }
 #price .h2 {
     margin-bottom: 40px;
 }
 #price .h4 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 #price .p {
-    margin-top: 40px;
+    margin-top: 30px;
+    font-weight: 400;
 }
 #price .price-ico {
     display: block;
@@ -103,16 +235,16 @@
     background-position: center;
 }
 #price .pi-1 {
-    background-image: url("./img/001-1.png");
+    background-image: url("./img/1.png");
 }
 #price .pi-2 {
-    background-image: url("./img/002-2.png");
+    background-image: url("./img/2.png");
 }
 #price .pi-3 {
-    background-image: url("./img/003-3.png");
+    background-image: url("./img/3.png");
 }
 #price .pi-4 {
-    background-image: url("./img/004-4.png");
+    background-image: url("./img/4.png");
 }
 
 #reviews {
@@ -122,14 +254,18 @@
 
 #garant {
     padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: #eeeeee;
+    padding-bottom: 40px;
+    background-color: #fefefe;
 }
 #garant .h2 {
     margin-bottom: 40px;
 }
 #garant .garant-item {
     margin-bottom: 20px;
+}
+#garant .garant-decription {
+    color: #444;
+    font-weight: 400;
 }
 #garant .garant-ico {
     display: block;
@@ -147,11 +283,13 @@
 #feedback {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #ddd;
+    background-color: #eee;
 }
 #feedback .p {
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+    font-weight: 300;
 }
 
 #footer {
@@ -168,4 +306,20 @@
 a {
     color: red;
     font-weight: 500;
+}
+
+#btnFeedbackSubmit {
+    padding: 15px;
+    font-variant: small-caps;
+    margin-top: 15px;
+    background-color: crimson;
+    border-color: crimson;
+}
+.privat-policy {
+    font-weight: 300;
+    font-size: 0.7em;
+    text-align: justify;
+}
+input.form-control {
+    color: #555;
 }

@@ -5,41 +5,126 @@
   <title>PHONE PLUS 161</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
   <link rel="stylesheet" href="main.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" integrity="sha512-d4KkQohk+HswGs6A1d6Gak6Bb9rMWtxjOa0IiY49Q3TeFd5xAzjWXDCBW9RS7m86FQ4RzM2BdHmdJnnKRYknxw==" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      var marquee = $("#marquee"); 
+      marquee.css({"overflow": "hidden", "width": "100%"});
+      // оболочка для текста ввиде span (IE не любит дивы с inline-block)
+      marquee.wrapInner("<span>");
+      marquee.find("span").css({ "width": "50%", "display": "inline-block", "text-align":"center" }); 
+      marquee.append(marquee.find("span").clone()); // тут у нас два span с текстом
+      marquee.wrapInner("<div>");
+      marquee.find("div").css("width", "200%");
+      var reset = function() {
+        $(this).css("margin-left", "0%");
+        $(this).animate({ "margin-left": "-100%" }, 12000, 'linear', reset);
+      };
+      reset.call(marquee.find("div"));
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function (){
+        $("#phone").mask("+7(999) 999-9999");
+    });
+  </script>
 </head>
 <body>
+
+  <nav id="header-nav" class="navbar navbar-light bg-light">
+    <div class="container">  
+      <a class="navbar-brand" href="#">
+        <!--<img src="img/logo.png" width="60" height="60" class="d-inline-block align-top logo-brand" alt="PHONE PLUS 161 LOGO">-->
+          <div class="logo-brand"></div>
+      </a>
+      <a class="navbar-brand phone-main-href" href="tel:+79885438442">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="crimson" class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z"/>
+</svg> +7 (988) 543-84-42
+      </a>
+    </div>
+  </nav>
+  <!--
   <section id="header">
     <div class="container">
       <div class="row">
-        <div class="h5">
-          PHONE PLUS 161
+        <div class="col-sm-1">
+          <div class="logo">
+            <a href="#">
+              <img class="logo-img" src="img/logo.png">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-2 text-center">
+          <a href="#about">О нас</a>
+        </div>
+
+        <div class="col-sm-2 text-center">
+          <a href="#about">Калькулятор стоимости</a>
         </div>
       </div>
     </div>
   </section>
+-->
 
   <section id="title">
     <div class="container">
       <diw class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 mt-3">
           <div class="row">
-            <div class="h5">
+            <div class="h5 title-logo">
               Сервисный центр на Дону
             </div>
           </div>
 
           <div class="row">
             <div class="h1">
-              PHONE PLUS 161
+              PHONE PLUS 161 
+            </div>
+          </div>
+
+          <div class="row">
+            <a class="p adress" href="#geo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
+  <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/></svg>
+              г. Ростов-на-Дону, ул. Текучёва 121
+            </a>
+          </div>
+
+          <div class="row ">
+            <div class="p work-hours">
+              Пн-Пт: 09:00-20:00
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="p work-hours">
+              Сб-Вс: 09:00-19:00
             </div>
           </div>
         </div>
+
+        <div class="col-sm-6 text-center">
+          <a class="btn btn-info btn-title title-phone" href="tel:+79885438442">ПОЗВОНИТЬ НАМ</a>
+          <div class="p mt-2 or-before-element">ИЛИ</div>
+          <div class="or-element"></div>
+          <a class="btn btn-info btn-title mt-3" href="#feedback">РАССЧИТАТЬ СТОИМОСТЬ РЕМОНТА</a>
+        </div>
       </diw>
+    </div>
+
+    <div class="outher-links">
+      <div id="marquee"> • Преклейка дисплейных модулей • Удаление засветов Samsung • Live Demo Unit Samsung(LDU) • </div>
     </div>
   </section>
 
@@ -49,6 +134,8 @@
         Чем мы занимаемся?
       </div>
 
+      <hr>
+
       <div class="row">
         <div class="col-sm-4">
           <div class="about-icon about-phone-ico">
@@ -57,7 +144,7 @@
 
           <div class="h5 text-center">Мы чиним смартфоны</div>
 
-          <div class="about-content"> 
+          <div class="about-content text-justify"> 
             Мы специализируемся на ремонте смартфонов Apple, Samsung, Xiaomi, Huawei и Honor! А так же других популярных(и не очень) брендов. Производим все виды ремонта телефонов от простого модульного* до сложного комплексного**
           </div>
 
@@ -74,7 +161,7 @@
           </div>
 
           <div class="h5 text-center">Мы ремонтируем компьютеры</div>
-          <div class="about-content">
+          <div class="about-content text-justify">
             Нам под силу, без преувеличения, ремонт персональных компьютеров и ноутбуков любой сложности! Разбита матрица, нужна плановая чистка или проблема серьезней? Просто доверьтесь нам и Вы будете приятно удивлены результатом!
           </div>
         </div>
@@ -86,158 +173,8 @@
 
           <div class="h5 text-center">Мы работаем на выезд</div>
 
-          <div class="about-content">
+          <div class="about-content text-justify">
             У Вас сломался телевизор или нужно починить компьютер? И нет возможности приехать к нам в сервис? Не беда! Звоните нам и мы приедем! Наши мастера и курьеры каждый день работают на выезд по городу Ростову-на-Дону
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="feedback">
-    <div class="container">
-      <div class="h2 text-center">
-        Связаться с нами
-      </div>
-
-      <div class="p text-center">
-        Просто заполните форму ниже и мы сами перезвоним Вам в течении 20 минут!
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-          <form action="./mail.php" method="post">
-            <div class="form-group">
-              <label for="name">Ваше имя*:</label>
-              <input type="name" name="name" class="form-control" id="name" placeholder="Как мы можем к Вам обращаться?">
-            </div>
-            <div class="form-group">
-              <label for="email1">E-mail:</label>
-              <input type="email" name="email" class="form-control" id="email1" placeholder="Email адрес">
-            </div>
-            <div class="form-group">
-              <label for="phone">Номер телефона*:</label>
-              <input type="phone" name="phone" class="form-control" id="phone" placeholder="Ваш номер телефона">
-            </div>
-            <div class="form-group">
-              <label for="message">Сообщение*:</label>
-              <textarea class="form-control" name="message" rows="3" placeholder="Опишите свою проблему"></textarea>
-            </div>
-            <button type="submit" class="btn btn-info">Свяжитесь со мной!</button>
-          </form>
-        </div>
-        <div class="col-sm-2"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="price">
-    <div class="container">
-      <div class="h2 text-center">
-        Наши цены
-      </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="h4 text-center">Прозрачны</div>
-          <div class="price-ico pi-1"></div>
-          <div class="p text-center">
-            Это значит, что всесь перечень выполненных работ и затрат мы всегда прописываем в бланке
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="h4 text-center">Стабильны</div>
-          <div class="price-ico pi-2"></div>
-          <div class="p text-center">
-            Мы гарантируем, что после ремонта, цена за него не изменится
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="h4 text-center">Актуальны</div>
-          <div class="price-ico pi-3"></div>
-          <div class="p text-center">
-            У нас есть <a href="#">прайс-лист</a> на основые услуги, который постоянно обновляется
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="h4 text-center">Всегда лояльны</div>
-          <div class="price-ico pi-4"></div>
-          <div class="p text-center">
-            Мы всегда открыты к предложениям и готовы идти Вам на встречу!
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="garant">
-    <div class="container">
-      <div class="h2 text-center">
-        Гарантии
-      </div>
-
-      <div class="garant-item">
-        <div class="row">
-          <div class="col-sm-1">
-            <div class="garant-ico"></div>
-          </div>
-
-          <div class="col-sm-11">
-            <span class="attention-text">Мы дорожим Вашим доверием.</span> Именно по этому, мы можем сделать, по вашему запросу, любые фотографии в процессе ремонта Вашей техники и вернуть Вам Ваши запчасти, которые мы заменили!
-          </div>
-        </div>
-      </div>
-
-      <div class="garant-item">
-        <div class="row">
-          <div class="col-sm-1">
-            <div class="garant-ico"></div>
-          </div>
-
-          <div class="col-sm-11">
-            <span class="attention-text">Мы работаем не на количество, а на качество.</span> Для нас важно уделить столько времени каждому клиенту и его заказу, сколько это необходимо. Именно по этому люди нам доверяют.
-          </div>
-        </div>
-      </div>
-
-      <div class="garant-item">
-        <div class="row">
-          <div class="col-sm-1">
-            <div class="garant-ico"></div>
-          </div>
-
-          <div class="col-sm-11">
-            <span class="attention-text">Мы используем прозрачное ценообразование и актуальный прайс-лист.</span> Это значит, что каждый клиент может проследить какие работы были сделаны и получить полный финансовый отчёт по своему заказу.
-          </div>
-        </div>
-      </div>
-
-      <div class="garant-item">
-        <div class="row">
-          <div class="col-sm-1">
-            <div class="garant-ico"></div>
-          </div>
-
-          <div class="col-sm-11">
-            <span class="attention-text">Мы не берем деньги за воздух.</span> А это значит, платная первичная диагностика осталась в прошлом! В нашем сервисе Вы можете обратиться с любым вопросом и Вам помогут - БЕСПЛАТНО!
-          </div>
-        </div>
-      </div>
-
-      <div class="garant-item">
-        <div class="row">
-          <div class="col-sm-1">
-            <div class="garant-ico"></div>
-          </div>
-
-          <div class="col-sm-11">
-            <span class="attention-text">Мы знаем про институт репутации.</span> И мы не хотим ее терять. Именно по этому все конфликтные ситуации решаются индивидуально и мы всегда приходим к компромиссу!
           </div>
         </div>
       </div>
@@ -246,17 +183,17 @@
 
   <section id="geo">
     <div class="container">
-      <div class="h2 text-center">Как нас найти?</div>
+      <div class="h2 text-center">Наше местоположение</div>
 
       <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-6">
           <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.1642431752257!2d39.69352671517293!3d47.232933121709635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b9aa45aba391%3A0x750c58e795fa9a9c!2z0KHQtdGA0LLQuNGB0L3Ri9C5INGG0LXQvdGC0YAgIlBIT05FIFBMVVMgMTYxIg!5e0!3m2!1sru!2sru!4v1615418049451!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" align="middle"></iframe>
         </div>
 
-        <div class="col-sm-5">
+        <div class="col-sm-6">
           <div class="geo-text">
             <div class="h4">
-              Наш адрес:
+              Мы находимся по адресу:
             </div>
             <div class="h5">
               г. Ростов-на-Дону, ул. Текучева 121
@@ -265,20 +202,66 @@
             <div class="h4">
               Схема прохода:
             </div>
-            <div class="p">
-              Мы находимся в центре города Ростова-на-Дону на улице Текучёва 121. Недалеко от пересечения улицы Текучёва с переулком Халтуринский. Рядом с пунктом выдачи "OZON". У входа в наш сервисный центр есть удобная парковка для наших клиентов! Так же прямо напротив нашего сервиса есть автобусная остановка "Халтуринский переулок", на которой останавливаются маршруты 12, 25, 60 60а и 93.
+            <div class="p text-justify">
+              Мы находимся в центре города Ростова-на-Дону на улице Текучёва 121. Недалеко от пересечения улицы Текучёва с переулком Халтуринский. Рядом с пунктом выдачи "OZON". У входа в наш сервисный центр есть удобная парковка для наших клиентов! Так же прямо напротив нашего сервиса есть автобусная остановка "Халтуринский переулок", на которой останавливаются маршруты <b>12</b>, <b>25</b>, <b>60</b>, <b>60а</b> и <b>93</b>.
             </div>
 
             <div class="h4">
               Все еще не можете нас найти?
             </div>
-            <div class="h5">
-              Позвоните нам на горячую линию и наши операторы с радостью Вам помогут!
+            <div class="p text-justify">
+              <a href="tel:+79885438442">Позвоните нам</a> на горячую линию и наши операторы с радостью Вам помогут!
             </div>
-            <a href="#" class="button">Позвонить!</a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="container">
+      <div class="h2 text-center">
+        Наши цены всегда —
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="h4 text-center">Прозрачные</div>
+          <div class="price-ico pi-1"></div>
+          <div class="p text-center">
+            Это значит, что всесь перечень выполненных работ и затрат мы всегда прописываем в бланке
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="h4 text-center">Стабильные</div>
+          <div class="price-ico pi-2"></div>
+          <div class="p text-center">
+            Мы гарантируем после ремонта, что объявленная Вам ранее цена не изменится ни на копейку
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="h4 text-center">Актуальные</div>
+          <div class="price-ico pi-3"></div>
+          <div class="p text-center">
+            У нас есть единый <a href="#">прайс-лист</a> на наши основые услуги, который регулярно совершенствуется
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="h4 text-center">Лояльные</div>
+          <div class="price-ico pi-4"></div>
+          <div class="p text-center">
+            Мы открыты к нашим клиентам! У нас постоянно действуют акции и наша <a href="#">программа лояльности</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--<section id="social">
+    <div class="container">
+      <div class="h2 text-center m-5">Наши социальные сети</div>
     </div>
   </section>
 
@@ -292,11 +275,138 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis debitis, eligendi enim, eveniet fugit nemo nulla numquam odio odit officia quae quia quibusdam repellendus similique sint tenetur unde veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores blanditiis cum cumque dignissimos doloremque, doloribus eius id ipsa labore laboriosam nemo pariatur quas quos repudiandae sapiente suscipit vel veritatis.
       </div>
     </div>
+  </section>-->
+
+  <section id="garant">
+    <div class="container">
+      <div class="h2 text-center">
+        Почему именно мы?
+      </div>
+
+      <div class="garant-item">
+        <div class="row">
+          <div class="col-sm-1">
+            <div class="garant-ico"></div>
+          </div>
+
+          <div class="col-sm-11 garant-decription">
+            <span class="attention-text">Мы дорожим Вашим доверием.</span> Именно по этому, мы можем сделать, по вашему запросу, любые фотографии в процессе ремонта Вашей техники и вернуть Вам Ваши запчасти, которые мы заменили!
+          </div>
+        </div>
+      </div>
+
+      <div class="garant-item">
+        <div class="row">
+          <div class="col-sm-1">
+            <div class="garant-ico"></div>
+          </div>
+
+          <div class="col-sm-11 garant-decription">
+            <span class="attention-text">Мы работаем не на количество, а на качество.</span> Для нас важно уделить столько времени каждому клиенту и его заказу, сколько это необходимо. Именно по этому люди нам доверяют.
+          </div>
+        </div>
+      </div>
+
+      <div class="garant-item">
+        <div class="row">
+          <div class="col-sm-1">
+            <div class="garant-ico"></div>
+          </div>
+
+          <div class="col-sm-11 garant-decription">
+            <span class="attention-text">Мы используем прозрачное ценообразование и актуальный прайс-лист.</span> Это значит, что каждый клиент может проследить какие работы были сделаны и получить полный финансовый отчёт по своему заказу.
+          </div>
+        </div>
+      </div>
+
+      <div class="garant-item">
+        <div class="row">
+          <div class="col-sm-1">
+            <div class="garant-ico"></div>
+          </div>
+
+          <div class="col-sm-11 garant-decription">
+            <span class="attention-text">Мы не берем деньги за воздух.</span> А это значит, платная первичная диагностика осталась в прошлом! В нашем сервисе Вы можете обратиться с любым вопросом и Вам помогут - БЕСПЛАТНО!
+          </div>
+        </div>
+      </div>
+
+      <div class="garant-item">
+        <div class="row">
+          <div class="col-sm-1">
+            <div class="garant-ico"></div>
+          </div>
+
+          <div class="col-sm-11 garant-decription">
+            <span class="attention-text">Мы знаем про институт репутации.</span> И мы не хотим ее терять. Именно по этому все конфликтные ситуации решаются индивидуально и мы всегда приходим к компромиссу!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="feedback">
+    <div class="container">
+      <div class="h2 text-center">
+        Связаться с нами
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div class="p align-middle">
+            Просто заполните форму ниже, изложите свою неисправность и мы сами перезвоним Вам в течении 20 минут! Мы предложим Вам пути решения Вашей проблемы, примерную стоимость и сроки, в которые мы уложимся.
+          </div>
+          <form action="./mail.php" method="post">
+            <div class="form-group">
+              <label for="name">Ваше имя*:</label>
+              <input type="name" name="name" class="form-control" id="name" placeholder="Как мы можем к Вам обращаться?">
+            </div>
+            <div class="form-group">
+              <label for="email1">E-mail:</label>
+              <input type="email" name="email" class="form-control" id="email1" placeholder="Ваш email адрес">
+            </div>
+            <div class="form-group">
+              <label for="phone">Номер телефона*:</label>
+              <input type="phone" name="phone" class="form-control" id="phone" placeholder="Ваш номер телефона">
+            </div>
+            <div class="form-group">
+              <label for="message">Сообщение*:</label>
+              <textarea class="form-control" name="message" rows="3" placeholder="Опишите свою проблему"></textarea>
+            </div>
+
+            <div class="privat-policy">
+              Нажимая кнопку "Продолжить", я подтверждаю, что даю свое согласие на обработку своих персональных данных согласно <a href="#feedback" onclick="window.open('private_policy.html')">Политике в отношении обработки персональных данных</a>
+            </div>
+
+            <div class="col text-center">
+              <button type="submit" class="btn btn-info" id="btnFeedbackSubmit">Продолжить</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </div>
   </section>
 
   <section id="footer">
     <div class="container">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid blanditiis dicta dignissimos dolores et eum fugit mollitia odit pariatur quas, quos repudiandae sapiente sed tempore! Dolor nam nostrum rem!
+      <div class="row">
+        <div class="col-sm-3">
+          col 1
+        </div> 
+        <div class="col-sm-3">
+          col 2
+        </div>
+        <div class="col-sm-3">
+          col 3
+        </div>
+        <div class="col-sm-3">
+          col 4
+        </div>
+      </div>
     </div>
   </section>
 </body>
