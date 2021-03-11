@@ -75,13 +75,22 @@
 
 #title {
     min-height: 100vh;
-    padding: 250px;
     background-image: url("./img/background.jpg");
     background-blend-mode: color;
     background-color: #eee;
 }
+#title .center-content {
+    display: inline-block;
+    position: relative;
+    top: 50vh;
+    transform: translateY(-70px);
+    white-space: nowrap;
+}
+#title .left-content {
+    padding-left: 50px;
+}
 #title .h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
     color: crimson;
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
@@ -90,23 +99,21 @@
     margin-top: -20px;
     top: 20px;
     color: #333;
+    font-size: 1.5em;
 }
 #title .adress {
-    font-size: 0.8em;
+    font-size: 1.2em;
     margin-top: -10px;
-    margin-left: 78px;
+    margin-left: 85px;
     color: #333;
 }
 #title .work-hours {
-    font-size: 0.8em;
+    font-size: 1.2em;
     margin-top: -5px;
-    margin-left: 93px;
+    margin-left: 100px;
 }
 #title .btn-title {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 30px;
     font-variant: small-caps;
     background-color: crimson;
     border-color: crimson;
