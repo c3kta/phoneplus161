@@ -120,13 +120,13 @@
     font-size: 0.9em;
 }
 #title .title-phone {
-    font-size: 1.4em;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    font-size: 0.9em;
+    padding-top: 0;
+    padding-bottom: 0;
     color: crimson;
     background: none;
+    border: none;
     /*
-    border: 1px dotted crimson;
     text-shadow: 2px 0 0 crimson, -2px 0 0 crimson, 0 2px 0 crimson, 0 -2px 0 crimson, 1px 1px crimson, -1px -1px 0 crimson, 1px -1px 0 crimson, -1px 1px 0 crimson;*/
 }
 #title .outher-links {
